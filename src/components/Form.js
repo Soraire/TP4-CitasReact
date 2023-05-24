@@ -4,7 +4,7 @@ export default function Form({AddAppointment}) {
 
 const AddAppointment = (e) => {
 e.preventDefault();
-let newCita = {
+let newAppointment = {
 Pet: e.target.pet.value,
 Owner: e.target.owner.value,
 Date: e.target.date.value,
@@ -16,7 +16,7 @@ e.target.Owner.value = ''
 e.target.Date.value = ''
 e.target.Time.value = ''
 e.target.symptoms.value = ''    
-AddAppointment(newCita);
+AddAppointment(newAppointment);
 }
 return (
 <>
