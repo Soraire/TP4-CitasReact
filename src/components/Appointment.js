@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Appointment({obj, index, onDeleteAppointment }) {
+export default function Appointment({obj, index, onDeleteAppointment}) {
     const save = (id) =>{
         onDeleteAppointment(id)
     }

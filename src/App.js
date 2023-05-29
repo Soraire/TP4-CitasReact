@@ -4,7 +4,6 @@ import Title from "./components/Title";
 import Form from "./components/Form";
 import AppointmentList from "./components/AppointmentList";
 import React, { useState } from "react";
-
 function App() {
   const [appointments, setAppointments] = useState([]);
   const AddAppointment = (newAppointment) => {
