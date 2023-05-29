@@ -1,24 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import SubTitle from "./components/SubTitle";
+import Title from "./components/Title";
+import Form from "./components/Form";
+import AppointmentList from "./components/AppointmentList";
+import React, { useState } from "react";
 
 function App() {
+  const [appointments, setAppointments] = useState([]);
+  const AddAppointment = (newAppointment) => {
+    setAppointments(
+      [
+        ...appointments,
+        newAppointment,
+      ]
+    );
+  }
+  const DeleteAppointment = (idDelete) => {
+    let newArr = appointments;
+    newArr = newArr.filter(objeto => objeto.id !== idDelete);
+    setAppointments(newArr)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Title name="Administrador de Pacientes" />
+      <div className="container">
+        <div className="row">
+          <div className="one-half column">
+            <SubTitle name="Crear mi Cita" />
+            <Form onAddAppointment={AddAppointment} />
+          </div>        
+          <div className="one-half column">
+            <SubTitle name="Administra tus Citas" />
+            <AppointmentList list={appointments} onDeleteAppointment={DeleteAppointment} />
+            
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
