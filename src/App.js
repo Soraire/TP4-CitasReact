@@ -27,7 +27,7 @@ function App() {
         <div className="row">
           <div className="one-half column">
             <SubTitle name="Crear mi Cita" />
-            <Form onAddAppointment={AddAppointment} />
+            <Form onCreateAppointment={AddAppointment} />
           </div>        
           <div className="one-half column">
             <SubTitle name="Administra tus Citas" />
